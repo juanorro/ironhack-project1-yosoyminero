@@ -1,3 +1,9 @@
+#board {
+  display: flex;
+  justify-content: center;
+}
+
 canvas {
   border: 1px dotted;
+  align-items: center;
 }
