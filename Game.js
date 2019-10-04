@@ -11,12 +11,17 @@ class Game {
         this.diamonds = MAPS[1].diamonds.map(diamond => {
             return new Diamonds(this.ctx, diamond.x * SQUARE_SIZE, diamond.y * SQUARE_SIZE)
         });
+
+        this.miner = MAPS[1].miner.map(min => {
+            return new Miner(this.ctx, min.x * SQUARE_SIZE, min.y * SQUARE_SIZE)
+        });
+
     }
 
     start(){
         setInterval(() => {
             this._draw()
-        }, 1000 / 60);
+        }, FPS);
     }
 
     _draw(){
@@ -25,5 +30,6 @@ class Game {
         this.grounds.forEach(ground => ground.draw());
         this.rocks.forEach(rock => rock.draw());
         this.diamonds.forEach(diamond => diamond.draw());
+        this.miner.forEach(min => min.draw());
     }
 }

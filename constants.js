@@ -1,6 +1,12 @@
 const  SQUARE_SIZE = 50;
 const ROCKS_SIZE = 50;
 
+UP = 38
+RIGHT = 39
+LEFT = 37
+SPACE = 32
+FPS = 1000 / 60
+
 
 const MAPS = {
     1: {
@@ -14,7 +20,6 @@ const MAPS = {
             { x: 0, y: 7 },
             { x: 0, y: 8 },
             { x: 0, y: 13 },
-            { x: 0, y: 0 },
             { x: 1, y: 0 },
             { x: 1, y: 1 },
             { x: 1, y: 2 },
@@ -205,6 +210,9 @@ const MAPS = {
             { x: 4, y: 8 },
             { x: 4, y: 5 },
             { x: 2, y: 10 },
+        ],
+        miner: [
+            { x: 0, y: 0 }
         ]
     }
 }
