@@ -1,11 +1,11 @@
 const  SQUARE_SIZE = 50;
 const ROCKS_SIZE = 50;
 
-UP = 38
-RIGHT = 39
-LEFT = 37
-SPACE = 32
-FPS = 1000 / 60
+UP = 38;
+RIGHT = 39;
+LEFT = 37;
+DOWN = 40;
+FPS = 1000 / 60;
 
 
 const MAPS = {

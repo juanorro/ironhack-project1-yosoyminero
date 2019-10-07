@@ -1,6 +1,7 @@
 class Game {
     constructor(ctx){
         this.ctx = ctx; 
+        this.intervalId = null;
         this.bg = new Background(ctx);
         this.grounds = MAPS[1].grounds.map(ground => {
             return new Ground(this.ctx, ground.x * SQUARE_SIZE, ground.y * SQUARE_SIZE)
@@ -16,11 +17,13 @@ class Game {
             return new Miner(this.ctx, min.x * SQUARE_SIZE, min.y * SQUARE_SIZE)
         });
 
+
     }
 
     start(){
         setInterval(() => {
-            this._draw()
+            this._draw();
+            this._move();
         }, FPS);
     }
 
@@ -32,4 +35,8 @@ class Game {
         this.diamonds.forEach(diamond => diamond.draw());
         this.miner.forEach(min => min.draw());
     }
+
+    _move() {
+        this.miner.forEach(min => min.move());
+      }
 }
