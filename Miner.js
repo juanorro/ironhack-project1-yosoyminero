@@ -34,12 +34,8 @@ class Miner {
     }
 
     move() {
-        // this._animate()
-        // this._applyActions();
         this.vx = this.x;
         this.vy = this.y;
-        // this.x += this.vx;
-        // this.y += this.vy;
         console.log('move');
       }
 
@@ -50,47 +46,30 @@ class Miner {
         document.onkeyup = e => this._switchAction(e.keyCode, false);
       }
 
-    //   _applyActions() {
-    //     if (this.actions.up) {
-    //       this.ay = -1;
-    //     } else {
-    //       this.ay = 0;
-    //     }
-        
-    //     if (this.actions.right) {
-    //       this.ax = 0;
-    //     } else if (this.actions.left) {
-    //       this.ax = 0;
-    //     } else {
-    //       this.ax = 0;
-    //     }
-    //   }
-
-      _switchAction(key, apply) {
-        switch (key) {
-          case UP:
-          if(apply === true) {
-            // this.audio.play()
-            //   } else {
-            //     this.audio.pause()
+    _switchAction(key, apply) {
+        console.log(apply)
+        if(apply === true){
+          switch (key) {
+            case UP:
+              this.y -= this.h
+              this.actions.up = apply;
+              break;
+            
+            case RIGHT:
+              this.x += this.w
+              this.actions.right = apply;
+              break;
+            
+            case LEFT:
+              this.x -= this.w
+              this.actions.left = apply;
+              break; 
+            
+            case DOWN:
+              this.actions.down = apply;
+              this.y += this.h
+              break; 
+            }
           }
-            this.actions.up = apply;
-            break;
-          case RIGHT:
-            this.actions.right = apply;
-            break;
-          case LEFT:
-            this.actions.left = apply;
-            break; 
-          case DOWN:
-          if(apply === true) {
-            // this.shootAudio.play()
-            //   } else {
-            //     this.shootAudio.pause()
-            //   }
-            this.actions.down = apply;
-            break; 
         }
-      }
-    }
 }

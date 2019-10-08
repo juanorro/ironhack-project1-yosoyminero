@@ -24,6 +24,7 @@ class Game {
         setInterval(() => {
             this._draw();
             this._move();
+            this._clear();
         }, FPS);
     }
 
@@ -39,4 +40,12 @@ class Game {
     _move() {
         this.miner.forEach(min => min.move());
       }
+
+    _clear() {
+        this.ctx.clearRect(this.miner(this.ctx.x, this.ctx.y, this.ctx.w, this.ctx.h))
+        }
 }
+
+//si la x del jugador + w === x del obstaculo
+//cuando ponga null que no pinte
+//hacerlo solo con hits y 
