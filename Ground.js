@@ -5,7 +5,8 @@ class Ground {
         this.y = y;
         this.w = SQUARE_SIZE,
         this.h = SQUARE_SIZE,
-        this.color = "#804000"
+        this.color = "#804000",
+        this.shouldDelete = false
     }
     draw() {
         this.ctx.fillStyle = this.color,
@@ -15,5 +16,9 @@ class Ground {
             this.w,
             this.h
             )
+    }
+
+    collide(miner){
+        return miner.x === this.x && miner.y === this.y;
     }
 }

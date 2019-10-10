@@ -8,6 +8,6 @@ class Background {
     }
 
     draw(){
-        console.log('draw');
+        // console.log('draw');
     }
 }

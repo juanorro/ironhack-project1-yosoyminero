@@ -5,7 +5,8 @@ class Diamonds {
         this.y = y;
         this.w = SQUARE_SIZE,
         this.h = SQUARE_SIZE,
-        this.color = "#0F54F1"
+        this.color = "#0F54F1",
+        this.shouldDelete = false
     }
     draw() {
         this.ctx.fillStyle = this.color,
@@ -15,5 +16,9 @@ class Diamonds {
             this.w,
             this.h
             )
+    }
+
+    collide(miner){
+        return miner.x === this.x && miner.y === this.y
     }
 }
