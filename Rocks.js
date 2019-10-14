@@ -10,13 +10,29 @@ class Rocks {
         this.shouldDelete = false;
         this.game = game;
         this.g = 0.5;
+        this.img = new Image();
+        this.img.src = "img/rocks.png";
+        this.img.frames = 1; 
+        this.img.frameIndex = 0;
     }
     draw() {
-        this.ctx.beginPath();
-        this.ctx.arc(this.x + this.r, this.y + this.r, this.r, 0, 2 * Math.PI);
-        this.ctx.fillStyle = this.color;
-        this.ctx.fill();
-        this.ctx.closePath();
+        // this.ctx.beginPath();
+        // this.ctx.arc(this.x + this.r, this.y + this.r, this.r, 0, 2 * Math.PI);
+        // this.ctx.fillStyle = this.color;
+        // this.ctx.fill();
+        // this.ctx.closePath();
+
+        this.ctx.drawImage(
+            this.img,
+            0,
+            this.img.frameIndex * this.img.height /this.img.frames,
+            this.img.width,
+            this.img.height / this.img.frames,
+            this.x,
+            this.y,
+            this.w,
+            this.h
+          )
       }
     
     // collide(miner) {
@@ -69,14 +85,14 @@ class Rocks {
             });
     }
 
-    gravity(nextPosition) {
-        switch (direction) {
-            case 'down':
-                !this.game.rocks.concat(this.game.grounds).concat(this.game.diamonds).some(return elem.y === )
-                nextPosition.y += this.g;
-                break;
-        }
-    }
+    // gravity(nextPosition) {
+    //     switch (direction) {
+    //         case 'down':
+    //             !this.game.rocks.concat(this.game.grounds).concat(this.game.diamonds).some(return elem.y === )
+    //             nextPosition.y += this.g;
+    //             break;
+    //     }
+    // }
 }
 
 // la colisión, el minero nunca puede pasar por encima de la roca. 
