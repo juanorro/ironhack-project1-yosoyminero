@@ -6,7 +6,7 @@ class Diamonds {
         this.w = SQUARE_SIZE,
         this.h = SQUARE_SIZE,
         this.color = "#0F54F1",
-        this.shouldDelete = false
+        this.shouldDelete = false;
         this.img = new Image();
         this.img.src = "img/diamond.png";
         this.img.frames = 1; 

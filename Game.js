@@ -76,6 +76,21 @@ class Game {
 
         // this.rocks = this.rocks.moveRocks();
     }
+
+    _countDiamonds() {
+        let score = 0;
+        console.log(score);
+        this.diamonds.forEach(diamond => {
+            this.miner.forEach(miner => {
+                if (diamond.collide(miner)) {
+                    diamond.shouldDelete = true;
+                }
+            });
+        });
+
+        this.diamonds =+ score;
+        console.log(score);
+    }
 }
 
 //si la x del jugador + w === x del obstaculo

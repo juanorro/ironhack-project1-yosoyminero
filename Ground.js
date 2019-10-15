@@ -8,7 +8,7 @@ class Ground {
         this.color = "#804000",
         this.shouldDelete = false;
         this.img = new Image();
-        this.img.src = "img/ground.png";
+        this.img.src = "img/ground.jpg";
         this.img.frames = 1; 
         this.img.frameIndex = 0;
     }

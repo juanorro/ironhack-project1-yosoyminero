@@ -16,11 +16,6 @@ class Rocks {
         this.img.frameIndex = 0;
     }
     draw() {
-        // this.ctx.beginPath();
-        // this.ctx.arc(this.x + this.r, this.y + this.r, this.r, 0, 2 * Math.PI);
-        // this.ctx.fillStyle = this.color;
-        // this.ctx.fill();
-        // this.ctx.closePath();
 
         this.ctx.drawImage(
             this.img,
@@ -35,17 +30,6 @@ class Rocks {
           )
       }
     
-    // collide(miner) {
-    //     if(miner.y + miner.h === this.y + this.h + this.w) {
-    //         return console.log('right');
-    //     } else if (miner.x + miner.w === this.x + this.w) {
-    //         return console.log('down');
-    //     } else if (miner.y + miner.w + miner.h === this.y + this.h) {
-    //         return console.log('left');
-    //     } else if (miner.x + miner.y + miner.w === this.x + this.w) {
-    //         return console.log('up');
-    //     }
-    // }
     move(direction) {
         const nextPosition = {
             x: this.x,
@@ -53,12 +37,12 @@ class Rocks {
         };
 
         switch (direction) {
-            // case 'up':
-            //     nextPosition.y -= this.h;
-            //     break;
-            // case 'down':
-            //     nextPosition.y += this.h;
-            //     break;
+            case 'up':
+                nextPosition.y -= this.h;
+                break;
+            case 'down':
+                nextPosition.y += this.h;
+                break;
             case 'left':
                 nextPosition.x -= this.w;
                 break;
